@@ -225,6 +225,9 @@ main{
     justify-content: center;
     cursor: pointer;
     transition: all 0.2s ease;
+    &:hover {
+        transform: scale(.95);
+    }
 }
 
 .send-btn {
@@ -236,8 +239,8 @@ main{
     background: #ef4444;
     color: white;
 }
-.clip-btn{
-    background-color: rgb(0, 0, 0);
+.bot-btn{
+    background-color: rgb(45, 38, 38);
     color:white;
 }
 .mic-btn.active {

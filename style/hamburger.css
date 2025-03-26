@@ -104,8 +104,8 @@
 .hamburger__container{
     display: none;
     position: absolute;
-    top: 1%;
-    right: 0;
+    top: 5%;
+    right: 5%;
     background-color: black;
     padding: 2rem;
     border-radius: 50%;
