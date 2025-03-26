@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Chat</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-comment-alt mr-2"></i>
+                <h5 class="mb-0">Tech Assistant</h5>
+            </div>
+            <i class="fas fa-ellipsis-v"></i>
+        </div>
+
+        <div class="chat-messages">
+            <!-- Bot Message -->
+            <div class="message bot">
+                <div class="message-bubble">
+                    ¡Hola! Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?
+                </div>
+            </div>
+
+            <!-- User Message -->
+            <div class="message user">
+                <div class="message-bubble">
+                    Necesito ayuda para generar un código QR.
+                </div>
+            </div>
+
+            <!-- Typing Indicator -->
+            <div class="message bot">
+                <div class="message-bubble">
+                    <div class="typing-indicator">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot" style="animation-delay: 0.2s"></div>
+                        <div class="typing-dot" style="animation-delay: 0.4s"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <button class="attach-btn">
+                <i class="fas fa-paperclip"></i>
+            </button>
+            <textarea class="chat-input form-control" placeholder="Escribe tu mensaje..." rows="1"></textarea>
+            <button class="send-btn">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
