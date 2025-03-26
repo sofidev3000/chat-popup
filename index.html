@@ -1,66 +1,130 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Chat</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Bootstrap CSS -->
+    <title>AI Chatbot</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 
+    <link rel="stylesheet" href="/style/style.css">
 </head>
+
 <body>
-    <div class="chat-container">
-        <div class="chat-header">
-            <div class="d-flex align-items-center">
-                <i class="fas fa-comment-alt mr-2"></i>
-                <h5 class="mb-0">Tech Assistant</h5>
+
+    <!-- Sidebar -->
+    <div class="hamburger__container">
+
+        <button class="hamburger hamburger--collapse" type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+    </div>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="header">
+
+                <div class="ai-avatar">
+                    <img src="./assets/icons/chatbot.svg" alt="">
+                </div>
+                <h3>BobRoss AI</h3>
             </div>
-            <i class="fas fa-ellipsis-v"></i>
+            <div class="select-container">
+                <label class="label modelo-label" for="modelo">Modelo</label>
+                <select name="modelo-select" id="modelo" class="modelo">
+                    <option class="option" value="option1">option1</option>
+                    <option class="option" value="option2">option2</option>
+                    <option class="option" value="option3">option3</option>
+                </select>
+            </div>
+            <div class="select-container">
+                <label class="label respuestas-label" for="respuestas">Respuestas (C,M,L)</label>
+                <select name="respuestas-select" id="respuestas" class="respuestas">
+                    <option class="option" value="option1">option1</option>
+                    <option class="option" value="option2">option2</option>
+                    <option class="option" value="option3">option3</option>
+                </select>
+            </div>
+            <div class="select-container">
+                <label class="label personaje-label" for="personaje">Personaje/Voz</label>
+                <select name="personaje-select" id="personaje" class="personaje">
+                    <option class="option" value="option1">option1</option>
+                    <option class="option" value="option2">option2</option>
+                </select>
+            </div>
+
         </div>
 
-        <div class="chat-messages">
-            <!-- Bot Message -->
-            <div class="message bot">
-                <div class="message-bubble">
-                    ¡Hola! Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?
+
+    </div>
+    <main>
+        <!-- Chatbot -->
+        <div class="chatbot-container">
+            <div class="chat-header">
+                <div class="ai-avatar">
+                    <img src="./assets/icons/chatbot.svg" alt="">
+                </div>
+                <div class="header-content">
+                    <h3>Asistente AI</h3>
+                    <span>En línea</span>
                 </div>
             </div>
 
-            <!-- User Message -->
-            <div class="message user">
-                <div class="message-bubble">
-                    Necesito ayuda para generar un código QR.
+            <div class="chat-messages">
+                <div class="message bot-message">
+                    <div class="ai-avatar">
+                        <img src="./assets/icons/chatbot.svg" alt="">
+                    </div>
+                    <div class="message-content">
+                        ¡Hola! Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?
+                    </div>
+                </div>
+
+                <div class="message user-message">
+                    <div class="message-content">
+                        Necesito ayuda para generar un código QR.
+                    </div>
+                </div>
+
+                <div class="message bot-message">
+                    <div class="ai-avatar">
+                        <img src="./assets/icons/chatbot.svg" alt="">
+                    </div>
+                    <div class="message-content">
+
+                        <div class="typing-indicator">
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot" style="animation-delay: 0.2s"></div>
+                            <div class="typing-dot" style="animation-delay: 0.4s"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="input-container">
+                <div class="input-elements">
 
-            <!-- Typing Indicator -->
-            <div class="message bot">
-                <div class="message-bubble">
-                    <div class="typing-indicator">
-                        <div class="typing-dot"></div>
-                        <div class="typing-dot" style="animation-delay: 0.2s"></div>
-                        <div class="typing-dot" style="animation-delay: 0.4s"></div>
+                    <textarea class="chat-input" placeholder="Escribe tu mensaje..." rows="1"></textarea>
+                    <div class="action-buttons">
+                        <button class="btn-icon clip-btn">
+                            <i class="fas fa-paperclip"></i>
+
+                        </button>
+                        <button class="btn-icon mic-btn">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <button class="btn-icon send-btn" type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <i class="fa-duotone fa-regular fa-message-bot"></i>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="input-container">
-            <button class="attach-btn">
-                <i class="fas fa-paperclip"></i>
-            </button>
-            <textarea class="chat-input form-control" placeholder="Escribe tu mensaje..." rows="1"></textarea>
-            <button class="send-btn">
-                <i class="fas fa-paper-plane"></i>
-            </button>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    </main>
+    <script type="module" src="./utils/hamburger.js"></script>
+    <script type="module" src="./utils/chat response.js" defer></script>
 </body>
+
 </html>
